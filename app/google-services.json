@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "455121033280",
+    "project_id": "gen-lang-client-0482574452",
+    "storage_bucket": "gen-lang-client-0482574452.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455121033280:android:ae656efdd1c6fb428ce7a5",
+        "android_client_info": {
+          "package_name": "com.aistudio.inventapro.rqxmzp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "455121033280-soulbtssc2gqk2v070quhkagcoadl7vl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aistudio.inventapro.rqxmzp",
+            "certificate_hash": "4c126bfe37aec2958e5b355a7308fdf606fb4aaf"
+          }
+        },
+        {
+          "client_id": "455121033280-165fc60pa1ia0e93ea5km9ivugd940jv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8ibkoS-nwqGAtq2gXVXzFBRybHpzLImU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "455121033280-165fc60pa1ia0e93ea5km9ivugd940jv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

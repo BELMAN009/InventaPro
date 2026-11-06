@@ -1,0 +1,222 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "Producto registrado en el inventario del negocio con nivel mínimo de existencias para alertas automáticas.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "UID del propietario autenticado en Firebase Auth."
+        },
+        "name": {
+          "type": "string",
+          "description": "Nombre comercial del producto."
+        },
+        "code": {
+          "type": "string",
+          "description": "Código interno o SKU del producto."
+        },
+        "category": {
+          "type": "string",
+          "description": "Categoría del producto (Abarrotes, Papelería, Bebidas, Lácteos, Limpieza, Otros)."
+        },
+        "unit": {
+          "type": "string",
+          "description": "Unidad de medida (pza, caja, paquete, kg, litro)."
+        },
+        "supplier": {
+          "type": "string",
+          "description": "Proveedor o distribuidor del producto."
+        },
+        "quantity": {
+          "type": "integer",
+          "description": "Cantidad disponible actual en inventario."
+        },
+        "minStock": {
+          "type": "integer",
+          "description": "Nivel mínimo de existencias para activar alerta y recordatorio de reabastecimiento."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Fecha de creación en servidor (clients must submit FieldValue.serverTimestamp())."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Fecha de última actualización en servidor (clients must submit FieldValue.serverTimestamp())."
+        }
+      },
+      "required": [
+        "userId",
+        "name",
+        "code",
+        "category",
+        "unit",
+        "supplier",
+        "quantity",
+        "minStock",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "StockEntry": {
+      "title": "StockEntry",
+      "description": "Registro histórico de una entrada de mercancía al inventario.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "UID del propietario autenticado."
+        },
+        "productId": {
+          "type": "string",
+          "description": "ID del documento del producto abastecido."
+        },
+        "productName": {
+          "type": "string",
+          "description": "Nombre del producto al momento del ingreso."
+        },
+        "productCode": {
+          "type": "string",
+          "description": "Código del producto al momento del ingreso."
+        },
+        "addedQuantity": {
+          "type": "integer",
+          "description": "Cantidad ingresada en esta recepción de mercancía."
+        },
+        "previousQuantity": {
+          "type": "integer",
+          "description": "Existencias previas antes de la entrada."
+        },
+        "newQuantity": {
+          "type": "integer",
+          "description": "Existencias resultantes después de la entrada."
+        },
+        "supplier": {
+          "type": "string",
+          "description": "Proveedor o referencia de remisión."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Observaciones o notas de la entrada de mercancía."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Fecha de registro en servidor (clients must submit FieldValue.serverTimestamp())."
+        }
+      },
+      "required": [
+        "userId",
+        "productId",
+        "productName",
+        "productCode",
+        "addedQuantity",
+        "previousQuantity",
+        "newQuantity",
+        "supplier",
+        "notes",
+        "createdAt"
+      ]
+    },
+    "TaskItem": {
+      "title": "TaskItem",
+      "description": "Tarea operativa o de reabastecimiento con recordatorio automático programado.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "UID del usuario propietario de la tarea."
+        },
+        "title": {
+          "type": "string",
+          "description": "Título de la tarea o recordatorio."
+        },
+        "description": {
+          "type": "string",
+          "description": "Descripción detallada o pasos a realizar."
+        },
+        "category": {
+          "type": "string",
+          "description": "Categoría de la tarea (Reabastecimiento, Inventario, Proveedores, Operativa, Urgente)."
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["ALTA", "MEDIA", "BAJA"],
+          "description": "Prioridad de la tarea."
+        },
+        "completed": {
+          "type": "boolean",
+          "description": "Indica si la tarea ya fue completada."
+        },
+        "dueDateMillis": {
+          "type": "integer",
+          "description": "Fecha y hora programada para el recordatorio automático en milisegundos epoch."
+        },
+        "reminderEnabled": {
+          "type": "boolean",
+          "description": "Indica si el recordatorio automático está activo."
+        },
+        "linkedProductId": {
+          "type": "string",
+          "description": "ID opcional del producto vinculado (vacío si es tarea general)."
+        },
+        "linkedProductName": {
+          "type": "string",
+          "description": "Nombre opcional del producto vinculado."
+        },
+        "autoGenerated": {
+          "type": "boolean",
+          "description": "Indica si fue generada automáticamente por alerta de stock bajo."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Fecha de creación en servidor (clients must submit FieldValue.serverTimestamp())."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Fecha de última actualización en servidor (clients must submit FieldValue.serverTimestamp())."
+        }
+      },
+      "required": [
+        "userId",
+        "title",
+        "description",
+        "category",
+        "priority",
+        "completed",
+        "dueDateMillis",
+        "reminderEnabled",
+        "linkedProductId",
+        "linkedProductName",
+        "autoGenerated",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": {
+        "$ref": "#/entities/Product"
+      },
+      "description": "Catálogo de productos del inventario por usuario autenticado."
+    },
+    "/stock_entries/{entryId}": {
+      "schema": {
+        "$ref": "#/entities/StockEntry"
+      },
+      "description": "Historial de entradas de mercancía al inventario."
+    },
+    "/tasks/{taskId}": {
+      "schema": {
+        "$ref": "#/entities/TaskItem"
+      },
+      "description": "Tareas operativas y de reabastecimiento con recordatorios automáticos."
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">InventaPro</string>
+    <string name="auth_subtitle">Sistema Inteligente de Inventario, Alertas de Stock y Gestión de Tareas con Recordatorios Automáticos</string>
+    <string name="sign_in_google">Iniciar sesión con Google</string>
+    <string name="sign_out">Cerrar sesión</string>
+    <string name="tab_dashboard">Alertas</string>
+    <string name="tab_inventory">Inventario</string>
+    <string name="tab_tasks">Tareas</string>
+    <string name="tab_entries">Entradas</string>
+    <string name="new_product">Nuevo Producto</string>
+    <string name="new_task">Nueva Tarea</string>
+    <string name="new_entry">Registrar Entrada</string>
+    <string name="seed_sample_data">Cargar Datos de Ejemplo</string>
+    <string name="send_email_alert">Enviar Alerta por Correo</string>
+    <string name="sync_auto_reminders">Sincronizar Recordatorios</string>
+</resources>

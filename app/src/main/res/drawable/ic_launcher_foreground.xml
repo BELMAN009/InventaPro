@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Isometric inventory box + check badge inside 66dp safe zone -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M54,24 L80,38 L80,68 L54,82 L28,68 L28,38 Z" />
+    <path
+        android:fillColor="#FFD9F0FA"
+        android:pathData="M54,28 L76,40 L54,52 L32,40 Z" />
+    <path
+        android:fillColor="#FF14749E"
+        android:pathData="M32,44 L52,55 L52,77 L32,66 Z" />
+    <path
+        android:fillColor="#FF0B4F6C"
+        android:pathData="M76,44 L56,55 L56,77 L76,66 Z" />
+    <!-- Emerald task/reminder check badge -->
+    <path
+        android:fillColor="#FF10B981"
+        android:pathData="M70,56 A14,14 0 1,1 56,70 A14,14 0 1,1 70,56 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M67.5,73.5 L62.5,68.5 L64.6,66.4 L67.5,69.3 L75.4,61.4 L77.5,63.5 Z" />
+</vector>

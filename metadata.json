@@ -1,0 +1,6 @@
+{
+  "name": "InventaPro",
+  "description": "Sistema de control de inventario, entradas de mercancía, alertas de stock bajo y gestión de tareas operativas con recordatorios automáticos en tiempo real con Firebase.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
